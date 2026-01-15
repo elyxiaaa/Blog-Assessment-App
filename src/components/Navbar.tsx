@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 import { FiUser, FiLogOut } from 'react-icons/fi';
 import { supabase } from '../lib/supabase';
 import { createPortal } from 'react-dom';
+import { MdOutlineArticle } from "react-icons/md";
+import { IoCreateOutline } from "react-icons/io5";
+import { IoIosPeople } from "react-icons/io";
+import { RiBloggerLine } from "react-icons/ri";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -83,13 +87,24 @@ const Navbar = () => {
       {/** DESKTOP*/}
       <div className="hidden md:flex gap-8 items-center relative">
         <NavLink to="/home" active={isActive('/home')}>
-          Trending Articles
+        <div className="flex items-center gap-1 ">
+          <MdOutlineArticle className="text-xl" />Trending Articles
+        </div>
         </NavLink>
         <NavLink to="/create-blog" active={isActive('/create-blog')}>
-          Create a Blog
+          <div className="flex items-center gap-1 ">
+            <IoCreateOutline className="text-xl" />Create A Blog
+          </div>
+        </NavLink>
+         <NavLink to="/community-blog" active={isActive('/community-blog')}>
+          <div className="flex items-center gap-1 ">
+            <IoIosPeople className="text-xl" />Community Blogs
+          </div>
         </NavLink>
         <NavLink to="/my-blogs" active={isActive('/my-blogs')}>
-          My Blogs
+          <div className="flex items-center gap-1 ">
+            <RiBloggerLine className="text-xl" />My Blogs
+          </div>
         </NavLink>
 
         <div className="relative">
@@ -133,6 +148,7 @@ const Navbar = () => {
         <div className="md:hidden absolute top-[88px] left-0 w-full bg-white shadow-lg px-6 pb-6 pt-4 space-y-4 z-40">
           <MobileLink to="/home">Trending Articles</MobileLink>
           <MobileLink to="/create-blog">Create Blog</MobileLink>
+          <MobileLink to="/community-blog">Community Blogs</MobileLink>
           <MobileLink to="/my-blogs">My Blogs</MobileLink>
           <button
             onClick={confirmLogout}

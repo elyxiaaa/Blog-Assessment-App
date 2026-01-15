@@ -6,6 +6,7 @@ import CreateBlog from './pages/CreateBlog';
 import UpdateBlog from './pages/UpdateBlog';
 import DeleteBlog from './pages/DeleteBlog';
 import LandingPage from './pages/LandingPage';
+import CommunityBlogs from './pages/CommunityBlogs';
 import MyBlogs from './pages/MyBlogs';
 import PrivateRoute from './components/PrivateRoute';  
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/my-blogs" element={<MyBlogs />} />
           <Route path="/update-blog/:id" element={<UpdateBlog />} />
           <Route path="/delete-blog/:id" element={<DeleteBlog />} />
+          <Route path="/community-blog" element={<CommunityBlogs />} />
         </Route>
       </Routes>
     </BrowserRouter>
